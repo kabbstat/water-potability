@@ -41,7 +41,7 @@ def main():
       X_train, y_train = data_loading('./data/processed/train_processed.csv')
       n_estimators =load_params('params.yaml')
       model = train_model(X_train, y_train, n_estimators)
-      save_model(model, 'model.pkl')
+      save_model(model, 'models/model.pkl')
     except Exception as e:
         print(f"An error occurred: {e}")
 if __name__ == "__main__":

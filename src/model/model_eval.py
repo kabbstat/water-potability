@@ -17,7 +17,7 @@ def load_data(filepath):
 #y_test = data_test['Potability']
 def predict_model(X):
     try:
-        with open('model.pkl', 'rb') as file:
+        with open('models/model.pkl', 'rb') as file:
             model = pickle.load(file)
             y_pred = model.predict(X)
             return y_pred
@@ -56,7 +56,7 @@ def main():
         X_test, y_test = load_data('./data/processed/test_processed.csv')
         y_pred = predict_model(X_test)
         metrics = evaluation(y_test, y_pred)
-        save_metrics(metrics, 'metrics.json')
+        save_metrics(metrics, 'reports/metrics.json')
     except Exception as e:
         print(f'An error occured:{e}')
 if __name__=='__main__':
